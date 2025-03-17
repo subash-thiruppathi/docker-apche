@@ -1,0 +1,27 @@
+# Pull Ubuntu image
+docker pull ubuntu
+
+# Run a container in interactive mode
+docker run -it --name apache-container ubuntu
+
+# Inside the container, update packages and install Apache
+apt update
+apt install -y apache2
+
+# Start Apache service
+service apache2 start
+
+# Verify Apache is running
+service apache2 status
+
+# Exit the container first (in the container terminal)
+exit
+
+# Commit the container as a new image
+docker commit apache-container my-apache-image
+
+# Verify the image was created
+docker images
+
+# Push into docker hub
+docker push subasht/first:tagname
