@@ -25,3 +25,6 @@ docker images
 
 # Push into docker hub
 docker push subasht/first:tagname
+
+#
+docker run -it -p 84:80 -d first-build
